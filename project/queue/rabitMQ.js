@@ -16,14 +16,18 @@ async function connectQueue() {
 
 async function pushToQueue(data) {
     if (!channel) {
-        throw new Error("Queue not connected");  
+        console.log("Channel not ready");
+        return;
     }
 
-    channel.sendToQueue(
+   const result = channel.sendToQueue(
         "event_queue",
         Buffer.from(JSON.stringify(data)),
         { persistent: true }
     );
+
+    console.log("Send result:" , result);
+    console.log("Message pushed");
 }
 
 module.exports = {
