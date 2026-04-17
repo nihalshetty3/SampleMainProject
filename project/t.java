@@ -9,17 +9,17 @@ public class t{
         System.out.println("Test webhook trigger for Github action");
         System.out.println("Latest trigger check");
     }
-    public static int binSearch(int nums[], int target)
+    public static int binSearch(int nums[], int targetElement)
     {
         int low=0, high=nums.length-1;
         while(low <= high)
         {
             int mid = low + (high-low)/2;
-            if(nums[mid]==target)
+            if(nums[mid]==targetElement)
             {
                 return mid;
             }
-            else if(nums[mid] < taret)
+            else if(nums[mid] < targetElement)
             {
                 low++;
             }
