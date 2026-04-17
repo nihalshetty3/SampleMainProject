@@ -8,6 +8,7 @@ public class t{
     {
         System.out.println("Test webhook trigger for Github action");
         System.out.println("Latest trigger check");
+        System.out.println("Latest trigge githubr check");
     }
     public static int binSearch(int nums[], int targetElement)
     {
