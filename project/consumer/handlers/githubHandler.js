@@ -1,15 +1,22 @@
-const axios = require("axios");
 const { hasChanged } = require("../hashStore");
 
 module.exports = async function (data, channel) {
   const { payload } = data;
 
   const repo = payload.repository?.full_name;
-  if (!repo) return console.log("Invalid GitHub payload");
+  if (!repo) {
+    console.log("Invalid GitHub payload");
+    return;
+  }
 
   try {
-    const res = await axios.get(`https://api.github.com/repos/${repo}`);
-    const fullData = res.data;
+    const fullData = {
+      repository: payload.repository,
+      commits: payload.commits,
+      head_commit: payload.head_commit,
+      pusher: payload.pusher,
+      ref: payload.ref
+    };
 
     if (!hasChanged(repo, fullData)) {
       console.log("GitHub no change");
@@ -18,11 +25,17 @@ module.exports = async function (data, channel) {
 
     channel.sendToQueue(
       "normalization_queue",
-      Buffer.from(JSON.stringify({ ...data, fullData })),
+      Buffer.from(
+        JSON.stringify({
+          source: "github",
+          repo,
+          fullData
+        })
+      ),
       { persistent: true }
     );
 
-    console.log("GitHub sent");
+    console.log("GitHub sent to normalization_queue");
   } catch (err) {
     console.error("GitHub error:", err.message);
   }
