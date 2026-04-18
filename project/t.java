@@ -31,4 +31,12 @@ public class t{
         }
         return -1;
     }
+    public static boolean linSearch(int nums[] , int target)
+    {
+        for(int val : nums)
+        {
+            if(val == target) return true;
+        }
+        return false;
+    }
 }
