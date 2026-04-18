@@ -35,7 +35,7 @@ module.exports = async function (data , channel){
         {persistent : true}
       );
 
-      console.log("Github sent to Normalization_Queeu");
+      console.log("Github sent to Normalization_Queue");
   }
   catch(err){
     console.log("Github error:" , err.message);
