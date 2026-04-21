@@ -10,13 +10,14 @@ module.exports = async function (data , channel){
   }
 
   try{
-    const fullData = {
-      repository: payload.repository,
-      commits : payload.commits,
-      head_commit : payload.head_commit,
-      pusher : payload.pusher , 
-      ref : payload.ref
-    };
+    console.log("Calling API for full details");
+
+    const response = await axios.post("http://localhost:4000/enrich/github" , {
+      repo , 
+      payload
+    });
+
+      const fullData = response.data;
 
       if(!hasChanged(repo , fullData)){
         console.log("Github data has not changed");
