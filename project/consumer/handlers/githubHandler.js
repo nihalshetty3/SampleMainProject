@@ -18,7 +18,7 @@ module.exports = async function (data , channel){
       payload
     });
 
-      const fullData = response.data;
+      const fullData = response.data.repoDetails;
 
       if(!hasChanged(repo , fullData)){
         console.log("Github data has not changed");
