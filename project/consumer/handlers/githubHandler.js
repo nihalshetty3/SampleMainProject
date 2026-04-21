@@ -14,8 +14,7 @@ module.exports = async function (data , channel){
     console.log("Calling API for full details");
 
     const response = await axios.post("http://localhost:4000/enrich/github" , {
-      repo , 
-      payload
+      repo
     });
 
       const fullData = response.data.repoDetails;
