@@ -12,7 +12,7 @@ app.post("/enrich/github" , async (req , res) => {
             `https://api.github.com/repos/${repo}`,
             {
                 headers:{
-                    Authorization: `Beaerer YOUR_GITHUB_TOKEN`
+                   Authorization: `Bearer YOUR_GITHUB_TOKEN`
                 }
             }
         );
