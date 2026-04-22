@@ -7,9 +7,10 @@ public class t{
     public static void main(String args[])
     {
         System.out.println("Test webhook trigger for Github action");
+        System.out.println(" webhook trigger for Github action");
         System.out.println("Latest trigger check");
         System.out.println("Latest trigge github check");
-        System.out.println("Latest trigge github check after enriching using Rest APIS checksss 5");
+        System.out.println("Latest trigge github check after enriching using Rest APIS check ");
     }
     public static int binSearch(int nums[], int targetElement)
     {
