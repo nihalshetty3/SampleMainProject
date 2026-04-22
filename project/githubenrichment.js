@@ -12,7 +12,7 @@ app.post("/enrich/github" , async (req , res) => {
             `https://api.github.com/repos/${repo}`,
             {
                 headers:{
-                   Authorization: `Bearer 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`
+                   Authorization: `Bearer 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`
                 }
             }
         );
