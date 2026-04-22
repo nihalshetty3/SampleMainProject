@@ -5,6 +5,7 @@ module.exports = async function (data , channel){
   const {payload} = data;
 
   const repo = payload.repository?.full_name;
+  console.log("Repo received:", repo);
   if(!repo) {
     console.log("Invalid Github payload");
     return;

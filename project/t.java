@@ -14,7 +14,8 @@ public class t{
     }
     public static int binSearch(int nums[], int targetElement)
     {
-        int low=0, high=nums.length-1;
+        int n=nums.length;
+        int low=0, high=n-1;
         while(low <= high)
         {
             int mid = low + (high-low)/2;
