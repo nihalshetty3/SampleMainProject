@@ -30,7 +30,7 @@ module.exports = async function (data , channel){
         Buffer.from(
           JSON.stringify({
             source:"github", 
-            repo ,
+            payload ,
             fullData
           })
         ), 
