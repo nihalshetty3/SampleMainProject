@@ -11,7 +11,7 @@ public class t{
         System.out.println("Latest trigger check");
         System.out.println("Latest trigge github check");
         System.out.println("Latest trigge github check after enriching using Rest APIS check ");
-        System.out.println(" Readme final check 111");
+        System.out.println(" Readme final check check");
     }
     public static int binSearch(int nums[], int targetElement)
     {
