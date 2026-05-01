@@ -18,6 +18,7 @@ public class t{
         System.out.println("Commit id info retrieval check after changing visiblity");
         System.out.println("Commit id info retrieval check after changing visiblity");
         System.out.println("Commit id info retrieval check after changing visiblity check");
+        System.out.println("Commit id check");
     }
     public static int binSearch(int nums[], int targetElement)
     {
