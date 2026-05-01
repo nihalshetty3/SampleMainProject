@@ -44,9 +44,9 @@ module.exports = async function (data , channel){
          const commitRes = await axios.get(
           `https://api.github.com/repos/${repo}/commits/${commit.id}`,
           {
-            headers : {
-              Authorization : `Bearer ${process.env.GITHUB_TOKEN}`,
-            },
+            headers: process.env.GITHUB_TOKEN
+          ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` }
+          : {},
           }
          );
 
