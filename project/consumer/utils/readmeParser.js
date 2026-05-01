@@ -16,5 +16,5 @@ function extractReadmeData(readme){
 
     return {description , features};
 
-    module.exports = {extractReadmeData};
 }
+module.exports = {extractReadmeData};
