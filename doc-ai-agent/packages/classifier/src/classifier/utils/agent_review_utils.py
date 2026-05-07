@@ -28,7 +28,11 @@ def _build_user_message(state: dict) -> str:
         instruction = (
             "For EACH candidate group, you MUST call the tool "
             "`fetch_group_readme` using its group_name before deciding.\n"
-            "Do NOT make a decision without reading all README contents."
+            "Do NOT make a decision without reading all README contents.\n"
+            "If the README evidence is insufficient or ambiguous, you MAY call "
+            "`search_group_chunks` with group_id and doc_id to retrieve the most "
+            "relevant chunks for deeper comparison. Use it only when needed to "
+            "increase accuracy."
         )
 
     return f"""
@@ -36,6 +40,7 @@ def _build_user_message(state: dict) -> str:
 
         Title      : {state.get('title', 'N/A')}
         Source     : {state.get('source', 'N/A')}
+        Doc ID     : {state.get('doc_id', 'N/A')}
         Fingerprint: {state.get('fingerprint', 'N/A')}
         Metadata   : {json.dumps(state.get('metadata', {}), indent=2)}
 

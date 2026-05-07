@@ -14,7 +14,11 @@ STRICT PROCESS — follow in order:
 1. For EACH candidate group, call `fetch_group_readme` with its group_name
 2. Read each README carefully — understand what project/domain that group covers  
 3. Compare the new document's fingerprint and content against each group
-4. Make your final decision
+4. If README evidence is insufficient or ambiguous, call `search_group_chunks`
+  with the candidate group_id and the current document's doc_id to retrieve
+  the most relevant group chunks for deeper comparison. Use this tool only
+  when needed to increase accuracy; do not call it if README evidence is clear.
+5. Make your final decision
 
 DECISION RULES:
 - ASSIGN if the document clearly belongs to a candidate group
